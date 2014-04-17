@@ -1,5 +1,9 @@
-" Use the Molokai theme (originally created for TextMate by Wimer Hazenberg)
-colorscheme molokai
+" Use the soloarized color scheme
+syntax enable
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " Make Vim more useful
 set nocompatible
