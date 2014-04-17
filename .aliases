@@ -10,6 +10,7 @@ alias -- -="cd -"
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias doc="cd ~/Documents"
 alias p="cd ~/projects"
 alias g="git"
 alias h="history"
@@ -151,7 +152,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 ##################
 #General aliases #
 ##################
-alias ll="ls -Flag ${colorflag}"
+alias ll="ls -Fla ${colorflag}"
 alias d2u='dos2unix'
 alias c=clear
 alias copy=cp
@@ -237,7 +238,8 @@ alias sie='ls -Fla'
 ##
 alias z='. ~/.bash_profile'
 alias zz='vi ~/dotfiles/nowucca/dotfiles/.bash_profile'
-
+alias dotf="cd ~/dotfiles/nowucca/dotfiles"
+alias dotsync="sync-dotfiles.sh"
 
 ##
 ## Old tools aliases
