@@ -37,3 +37,55 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+###################################
+# Find lcoations, not bulletproof #
+###################################
+export WHERE=`uname -n | cut -f1 -d.`
+export WHEREFROM=`who am i | cut -f2 -d " "`
+
+
+###################################
+# Output Welcome Messages         #
+###################################
+echo "Logged in from `who am i | cut -f2 -d " "`"
+tput smso
+echo "TERM set to $TERM"
+tput rmso
+if [ "$DISPLAY" = "" ]
+then
+    echo "DISPLAY not set"
+else
+    echo "DISPLAY is $DISPLAY"
+fi
+
+###################################
+# STTY Settings                   #
+###################################
+stty -ixon
+stty erase \ intr \ kill \ susp \
+
+# ixon (-ixon) Enable (disable) START/STOP output control
+# Output is stopped by sending STOP control character and
+# started by sending the START control character.
+
+
+#############################################################
+# System specific customization                             #
+#############################################################
+export OSTYPE=`uname -s`
+case "$OSTYPE" in
+        "Linux")
+        ;;
+
+        "Darwin")
+          echo "Cool, a Mac!"
+        ;;
+
+        *)
+          echo "Cool! A new machine!  Using default settings."
+        ;;
+esac
+
+
+

@@ -13,7 +13,6 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
 alias h="history"
-alias j="jobs"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -83,7 +82,7 @@ jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources
 unset jscbin
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+alias cb="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -135,11 +134,6 @@ done
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 7'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
-
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
@@ -152,3 +146,120 @@ alias reload="exec $SHELL -l"
 
 # Faster npm for europeans
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"
+
+
+##################
+#General aliases #
+##################
+alias ll="ls -Flag ${colorflag}"
+alias d2u='dos2unix'
+alias c=clear
+alias copy=cp
+alias cls=clear
+alias cp='cp -i'
+alias dir='ls -Fla'
+alias del=rm
+alias f=finger
+alias help='echo The Unix help command is man.  For example type: man man'
+alias m='more'
+alias mv='/bin/mv -i'
+alias newpasswd=nispasswd
+alias q='quota -v'
+alias rename=mv
+alias rm='rm -i'
+alias rd=rmdir
+alias term='echo $TERM'
+alias t=telnet
+alias s=ssh
+
+alias resource='source $HOME/.bash_profile'
+
+
+###################
+#X-Window aliases #
+###################
+alias disp='echo $DISPLAY'
+# if DISPLAY is set, many programs will assume you are running X
+alias nodisp='export DISPLAY='
+
+#####################
+#edit/emacs aliases #
+#####################
+alias e='emacs -nw'
+alias edit='emacs'
+
+###############
+#Term aliases #
+###############
+alias vt100='export TERM=vt100;echo "TERM set to vt100"'
+alias vt102='setenv TERM=vt102;echo "TERM set to vt102"'
+alias xt='setenv TERM=xterm;echo "TERM set to xterm"'
+
+
+#######################
+# Job Control aliases #
+#######################
+alias 1='fg %1'
+alias 2='fg %2'
+alias 3='fg %3'
+alias 4='fg %4'
+alias 5='fg %5'
+alias 6='fg %6'
+alias 7='fg %7'
+alias 8='fg %8'
+alias 9='fg %9'
+alias 10='fg %10'
+alias k1='kill %1'
+alias k2='kill %2'
+alias k3='kill %3'
+alias k4='kill %4'
+alias k5='kill %5'
+alias k6='kill %6'
+alias k7='kill %7'
+alias k8='kill %8'
+alias k9='kill %9'
+alias h='fc -l'
+alias j='jobs -l'
+alias sus='kill -STOP $$'
+
+
+##
+## Navigation / Dir Listing
+##
+alias dv='dirs -v'
+alias dh='dirs -v | head -11'
+alias dor='ls -Fla'
+alias sie='ls -Fla'
+
+
+##
+## Edit and reload aliases for these dotfiles
+##
+alias z='. ~/.bash_profile'
+alias zz='vi ~/dotfiles/nowucca/dotfiles/.bash_profile'
+
+
+##
+## Old tools aliases
+##
+alias gv='ghostview -a4 -magstep -1'
+alias xd='xdvi -keep -s 4'
+alias xfig='xfig -but_per_row 3 -metric -startgridmode 1 -pheight 15 -pwidth 20'
+alias bibview='$HOME/bin/bibview/bibview -rcfile $HOME/bin/bibview/BibView -bibdir $HOME/Pubs/bib -file mybib.bib'
+alias cvsup='cvs -q up -dP'
+cd .
+
+
+
+##
+## Maven aliases
+##
+
+alias mvnci='mvn clean install | tee mvnci.txt'
+alias mvncist='mvn clean install -DskipTests=true | tee mvnci.txt'
+alias subtext='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
+alias mvn3='export M2_HOME=/usr/local/apache-maven-3.0.4; mvn3'
+alias pmvn='mvn -s $HOME/.m2/personal-settings.xml'
+alias pmvnci='pmvn clean install | tee mvnci.txt'
+alias pmvncist='pmvn clean install -DskipTests=true | tee mvnci.txt'
+
