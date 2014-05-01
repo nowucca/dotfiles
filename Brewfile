@@ -25,7 +25,6 @@ install wget --enable-iri
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
 install homebrew/dupes/grep
-install homebrew/homebrew-php/php55 --with-gmp
 
 # Install other useful binaries
 install ack

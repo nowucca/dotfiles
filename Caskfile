@@ -17,3 +17,9 @@ cask install transmission 2> /dev/null
 cask install ukelele 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
+
+# GitHub for Mac
+cask install github 2> /dev/null
+
+# HipChat
+cask install hipchat 2> /dev/null
