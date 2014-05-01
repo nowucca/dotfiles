@@ -25,6 +25,7 @@ install wget --enable-iri
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
 install homebrew/dupes/grep
+install homebrew/homebrew-php/php55 --with-gmp
 
 # Install other useful binaries
 install ack
@@ -33,6 +34,7 @@ install git
 install imagemagick --with-webp
 install lynx
 install nmap
+install ucspi-tcp # `tcpserver` et al.
 install node
 install p7zip
 install pigz
@@ -42,6 +44,7 @@ install rhino
 install sqlmap
 install tree
 install webkit2png
+install xpdf
 install zopfli
 
 install wireshark --with-lua
