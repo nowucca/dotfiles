@@ -30,6 +30,7 @@ install homebrew/dupes/grep
 install ack
 #install exiv2
 install git
+install maven31
 install imagemagick --with-webp
 install lynx
 install nmap
