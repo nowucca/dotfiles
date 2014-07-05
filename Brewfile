@@ -54,6 +54,8 @@ install homebrew/versions/bash-completion2
 install docker
 
 install ssh-copy-id
+ 
+install id3lib
 
 # Remove outdated versions from the cellar
 cleanup
