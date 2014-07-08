@@ -57,5 +57,7 @@ install ssh-copy-id
  
 install id3lib
 
+install xmlstarlet
+
 # Remove outdated versions from the cellar
 cleanup
