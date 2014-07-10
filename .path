@@ -3,5 +3,5 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/etc:/usr/local/sbin:/usr/sb
 
 # MacPorts Installer Paths if/when we use MacPorts
 if [ -d /opt/local/bin -o -d /opt/local/sbin ]; then 
-  export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 fi
