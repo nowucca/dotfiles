@@ -59,5 +59,7 @@ install id3lib
 
 install xmlstarlet
 
+install kdiff3
+
 # Remove outdated versions from the cellar
 cleanup
