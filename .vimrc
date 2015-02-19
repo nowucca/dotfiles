@@ -49,7 +49,7 @@ set cursorline
 set tabstop=2
 " Show “invisible” characters
 " set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+" set list
 " Highlight searches
 set hlsearch
 " Ignore case of searches
