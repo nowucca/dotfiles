@@ -37,10 +37,14 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+    echo "Loading bash completions from $(brew --prefix)/share/bash-completion/bash_completion"
+    . $(brew --prefix)/share/bash-completion/bash_completion
 fi
-
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    echo "Loading bash completions from $(brew --prefix)/etc/bash_completion"
+   . $(brew --prefix)/etc/bash_completion
+fi
 
 ###################################
 # Find lcoations, not bulletproof #
