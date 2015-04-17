@@ -4,25 +4,26 @@
 install phinze/cask/brew-cask
 tap caskroom/versions
 
-cask install dropbox 2> /dev/null
-cask install google-chrome 2> /dev/null
-cask install imagealpha 2> /dev/null
-cask install imageoptim 2> /dev/null
-cask install iterm2 2> /dev/null
-cask install miro-video-converter 2> /dev/null
-cask install opera 2> /dev/null
-cask install sublime-text 2> /dev/null
-cask install the-unarchiver 2> /dev/null
-cask install transmission 2> /dev/null
-cask install ukelele 2> /dev/null
-cask install virtualbox 2> /dev/null
-cask install vlc 2> /dev/null
+cask install dropbox 
+cask install google-chrome 
+cask install imagealpha 
+cask install imageoptim 
+cask install iterm2 
+cask install miro-video-converter 
+cask install opera 
+cask install sublime-text 
+cask install the-unarchiver 
+cask install transmission 
+cask install ukelele 
+cask install virtualbox 
+cask install vlc 
 cask install thunderbird 2>/dev/null
 
 # GitHub for Mac
-cask install github 2> /dev/null
+cask install github 
 
 # HipChat
-cask install hipchat 2> /dev/null
+cask install hipchat 
 
 # Amethyst window manager
+cask install amethyst

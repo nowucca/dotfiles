@@ -50,8 +50,6 @@ install zopfli
 
 install wireshark --with-lua
 
-install homebrew/versions/bash-completion2 
-
 install docker
 
 install ssh-copy-id
