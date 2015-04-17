@@ -24,3 +24,5 @@ cask install github 2> /dev/null
 
 # HipChat
 cask install hipchat 2> /dev/null
+
+# Amethyst window manager
