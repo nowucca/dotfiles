@@ -17,7 +17,7 @@ cask install transmission
 cask install ukelele 
 cask install virtualbox 
 cask install vlc 
-cask install thunderbird 2>/dev/null
+cask install thunderbird 
 
 # GitHub for Mac
 cask install github 
@@ -27,3 +27,6 @@ cask install hipchat
 
 # Amethyst window manager
 cask install amethyst
+
+# macvim
+cask install macvim
