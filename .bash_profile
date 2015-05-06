@@ -9,6 +9,26 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# init z https://github.com/rupa/z
+. ~/init/z/z.sh
+
+#command line completion
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+    . $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
+
+# GTK path for wireshark GUI to work
+GTK_PATH=/usr/local/lib/gtk-2.0
+
+# Include git completion if present
+if [ -f $(brew --prefix)/share/zsh/site-functions/git-completion.bash ]; then
+	. $(brew --prefix)/share/zsh/site-functions/git-completion.bash
+fi
+
+# Git completions even with git alias: http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases
+ __git_complete g __git_main
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
