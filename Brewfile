@@ -60,5 +60,9 @@ install xmlstarlet
 
 install kdiff3
 
+install gpg
+
+install ag
+
 # Remove outdated versions from the cellar
 cleanup
