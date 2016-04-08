@@ -64,5 +64,7 @@ install gpg
 
 install ag
 
+install gradle
+
 # Remove outdated versions from the cellar
 cleanup
