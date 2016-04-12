@@ -51,6 +51,7 @@ install zopfli
 install wireshark --with-lua
 
 install docker
+install docker-machine
 
 install ssh-copy-id
  
