@@ -77,7 +77,6 @@ fi
 export WHERE=`uname -n | cut -f1 -d.`
 export WHEREFROM=`who am i | cut -f2 -d " "`
 
-
 ###################################
 # Output Welcome Messages         #
 ###################################
