@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-cd "$(dirname "${BASH_SOURCE}")"
-git pull origin master
+
+cd "$(dirname "${BASH_SOURCE}")";
+
 function ensureGitRepo() {
   repo_url=$1
   repo_folder=$2
@@ -9,19 +10,24 @@ function ensureGitRepo() {
 }
 
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
-  ensureGitRepo git://github.com/altercation/solarized.git solarized
-  ensureGitRepo git://github.com/rupa/z.git z
-	source ~/.bash_profile
+	rsync --exclude ".git/" \
+		--exclude ".DS_Store" \
+" Use the Solarized Dark theme" Use the Solarized Dark theme" Use the Solarized Dark theme" Use the Solarized Dark theme		--exclude ".osx" \
+		--exclude "bootstrap.sh" \
+		--exclude "README.md" \
+		--exclude "LICENSE-MIT.txt" \
+		-avh --no-perms . ~;
+        ensureGitRepo git://github.com/altercation/solarized.git solarized
+        ensureGitRepo git://github.com/rupa/z.git z
+	source ~/.bash_profile;
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt
+	doIt;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo
+	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt
-	fi
-fi
-unset doIt
+		doIt;
+	fi;
+fi;
+unset doIt;
