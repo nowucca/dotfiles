@@ -12,7 +12,7 @@ function ensureGitRepo() {
 function doIt() {
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
-" Use the Solarized Dark theme" Use the Solarized Dark theme" Use the Solarized Dark theme" Use the Solarized Dark theme		--exclude ".osx" \
+		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
