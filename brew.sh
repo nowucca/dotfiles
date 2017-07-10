@@ -113,6 +113,7 @@ brew install kdiff3
 brew install gpg
 brew install ag
 brew install gradle
+brew install rpm
 
 # Install my cask-based binaries.
 brew install phinze/cask/brew-cask
@@ -135,6 +136,9 @@ brew cask install transmission
 brew cask install ukelele 
 brew cask install virtualbox 
 brew cask install vlc 
+
+brew cask install little-snitch
+brew cask install micro-snitch
 
 # Remove outdated versions from the cellar.
 brew cleanup
