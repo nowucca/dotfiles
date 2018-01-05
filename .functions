@@ -235,3 +235,13 @@ function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
+# Disk usage to 2 levels
+function diskusage() {
+  if [ $# -eq 0 ]; then
+    depth=2
+  else
+    depth="$1"
+  fi
+  du -kd $depth | sort -nr
+}
+
