@@ -128,5 +128,9 @@ brew cask install ukelele
 brew cask install virtualbox 
 brew cask install vlc 
 
+# Blockchain
+brew tap paritytech/paritytech
+brew install parity --stable
+
 # Remove outdated versions from the cellar.
 brew cleanup
