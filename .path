@@ -5,3 +5,5 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/etc:/usr/local/sbin:/usr/sb
 #if [ -d /opt/local/bin -o -d /opt/local/sbin ]; then 
 #  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #fi
+
+#export PATH="$HOME/bin/ffmpeg/bin:$PATH"
