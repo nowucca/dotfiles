@@ -175,7 +175,7 @@ alias resource='source $HOME/.bash_profile'
 alias java6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6) && PATH=$JAVA_HOME/bin:$PATH'
 alias java7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7) && PATH=$JAVA_HOME/bin:$PATH'
 alias java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && PATH=$JAVA_HOME/bin:$PATH'
-alias java9='export JAVA_HOME=$(/usr/libexec/java_home -v 1.9) && PATH=$JAVA_HOME/bin:$PATH'
+alias java9='export JAVA_HOME=$(/usr/libexec/java_home -v 9) && PATH=$JAVA_HOME/bin:$PATH'
 alias trim="sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g'"
 
 ###################
