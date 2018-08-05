@@ -108,9 +108,10 @@ brew install gradle
 brew install rpm
 
 # Install my cask-based binaries.
-brew install phinze/cask/brew-cask
+#brew install phinze/cask/brew-cask
 brew tap caskroom/versions
-
+brew cask install alfred
+brew cask install hazel
 brew cask install dropbox 
 brew cask install github 
 brew cask install google-chrome 
@@ -133,8 +134,8 @@ brew cask install little-snitch
 brew cask install micro-snitch
 
 # Blockchain
-brew tap paritytech/paritytech
-brew install parity --stable
+#brew tap paritytech/paritytech
+#brew install parity --stable
 
 # Remove outdated versions from the cellar.
 brew cleanup

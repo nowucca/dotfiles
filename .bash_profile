@@ -21,6 +21,10 @@ if [ -f $(brew --prefix)/share/zsh/site-functions/git-completion.bash ]; then
 	. $(brew --prefix)/share/zsh/site-functions/git-completion.bash
 fi
 
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+  . /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
 # Git completions even with git alias: http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases
  __git_complete g __git_main
 
