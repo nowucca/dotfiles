@@ -105,6 +105,8 @@ brew install kdiff3
 brew install gpg
 brew install ag
 brew install gradle
+brew install lz4
+brew install jq
 brew install rpm
 
 # Install my cask-based binaries.
@@ -112,7 +114,8 @@ brew install rpm
 brew tap caskroom/versions
 brew cask install alfred
 brew cask install hazel
-brew cask install dropbox 
+brew cask install perforce
+brew cask install p4v
 brew cask install github 
 brew cask install google-chrome 
 brew cask install hipchat 
