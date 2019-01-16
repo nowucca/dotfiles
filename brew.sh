@@ -108,9 +108,11 @@ brew install gradle
 brew install lz4
 brew install jq
 brew install rpm
+brew install golang
 
 # Install my cask-based binaries.
 #brew install phinze/cask/brew-cask
+brew tap homebrew/cask
 brew tap caskroom/versions
 brew cask install alfred
 brew cask install hazel
@@ -118,7 +120,7 @@ brew cask install perforce
 brew cask install p4v
 brew cask install github 
 brew cask install google-chrome 
-brew cask install hipchat 
+brew cask install slack
 brew cask install imagealpha 
 brew cask install imageoptim 
 brew cask install iterm2 
@@ -133,8 +135,21 @@ brew cask install ukelele
 brew cask install virtualbox 
 brew cask install vlc 
 
+brew cask install gimp
+brew cask install macvim
+brew cask install kdiff3
+
+brew cask install remote-desktop-connection
+
 brew cask install little-snitch
 brew cask install micro-snitch
+
+#Ext4
+brew cask install osxfuse
+brew install ext4fuse
+
+#Utilities
+brew install dos2unix
 
 # Blockchain
 #brew tap paritytech/paritytech
