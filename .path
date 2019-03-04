@@ -1,5 +1,6 @@
 # Explicitly set the path
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/etc:/usr/local/sbin:/usr/sbin:/sbin:."
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # MacPorts Installer Paths if/when we use MacPorts
 #if [ -d /opt/local/bin -o -d /opt/local/sbin ]; then 

@@ -80,6 +80,7 @@ brew install ack
 #brew install exiv2
 brew install git
 brew install git-lfs
+brew install git-credential-manager
 brew install imagemagick --with-webp
 brew install lua
 brew install lynx
@@ -109,6 +110,7 @@ brew install lz4
 brew install jq
 brew install rpm
 brew install golang
+brew install maven@3.6
 
 # Install my cask-based binaries.
 #brew install phinze/cask/brew-cask
@@ -150,6 +152,7 @@ brew install ext4fuse
 
 #Utilities
 brew install dos2unix
+brew install bzip2
 
 # Blockchain
 #brew tap paritytech/paritytech
