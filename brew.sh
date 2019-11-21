@@ -157,6 +157,9 @@ brew install ext4fuse
 brew install dos2unix
 brew install bzip2
 
+#Java
+brew install jenv
+
 # Blockchain
 #brew tap paritytech/paritytech
 #brew install parity --stable
