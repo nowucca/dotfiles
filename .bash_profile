@@ -9,6 +9,10 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# init jenv http://www.jenv.be/
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # init z https://github.com/rupa/z
 . ~/init/z/z.sh
 
