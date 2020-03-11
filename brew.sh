@@ -166,6 +166,9 @@ brew cask install gpg-suite
 # TCL 
 brew cask install tcl
 
+#Java
+brew install jenv
+
 # Blockchain
 #brew tap paritytech/paritytech
 #brew install parity --stable
