@@ -6,3 +6,12 @@ defscrollback 32000
 
 # Always start `screen` with UTF-8 enabled (`screen -U`)
 defutf8 on
+
+# Always start `screen` with UTF-8 enabled (`screen -U`)
+defutf8 on
+
+# Establish a plain black/white status bar
+hardstatus off
+hardstatus alwayslastline "%H %{.w} %c | %Y-%m-%d |   %w %{= dd}  "
+
+termcapinfo xterm ti@:te@
