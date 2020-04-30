@@ -150,6 +150,9 @@ brew cask install remote-desktop-connection
 brew cask install little-snitch
 brew cask install micro-snitch
 
+# Security tool
+brew cask install owasp-zap
+
 #Ext4
 brew cask install osxfuse
 brew install ext4fuse
@@ -157,6 +160,15 @@ brew install ext4fuse
 #Utilities
 brew install dos2unix
 brew install bzip2
+
+# GPG suite
+brew cask install gpg-suite
+
+# TCL 
+brew cask install tcl
+
+#Java
+brew install jenv
 
 # Blockchain
 #brew tap paritytech/paritytech
