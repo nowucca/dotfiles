@@ -42,6 +42,7 @@ brew install gnupg
 brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
+brew install openssl
 brew install screen
 brew install php
 brew install gmp
@@ -175,6 +176,10 @@ brew install jenv
 
 # Blockchain
 #brew tap paritytech/paritytech
+
+# MYSQL
+brew install mysql
+brew cask install mysqlworkbench
 #brew install parity --stable
 
 # Remove outdated versions from the cellar.
