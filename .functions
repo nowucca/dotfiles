@@ -200,3 +200,9 @@ function restoredock() {
   defaults write com.apple.dock no-bouncing -bool FALSE && killall Dock
 }
 
+function ssh_screen() {
+   ssh -t $1 screen -AadR
+}
+
+function uriencode { jq -nr --arg v "$1" '$v|@uri'; }
+

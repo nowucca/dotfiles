@@ -61,7 +61,7 @@ if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completio
 fi;
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh ssh_screen;
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
@@ -127,5 +127,11 @@ case "$OSTYPE" in
         ;;
 esac
 
+
+# To use Homebrew's directories rather than ~/.jenv add to your profile:
+export JENV_ROOT=/usr/local/opt/jenv
+
+# To enable shims and autocompletion add to your profile:
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 

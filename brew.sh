@@ -42,6 +42,7 @@ brew install gnupg
 brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
+brew install openssl
 brew install screen
 brew install php
 brew install gmp
@@ -77,6 +78,9 @@ brew install tcptrace
 brew install ucspi-tcp # `tcpserver` etc.
 brew install xpdf
 brew install xz
+
+# Install Kotlin
+brew install kotlin
 
 # Install other useful binaries.
 brew install ack
@@ -159,6 +163,7 @@ brew install ext4fuse
 #Utilities
 brew install dos2unix
 brew install bzip2
+brew install geoip
 
 # GPG suite
 brew cask install gpg-suite
@@ -171,6 +176,10 @@ brew install jenv
 
 # Blockchain
 #brew tap paritytech/paritytech
+
+# MYSQL
+brew install mysql
+brew cask install mysqlworkbench
 #brew install parity --stable
 
 # Remove outdated versions from the cellar.
