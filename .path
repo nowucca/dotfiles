@@ -3,6 +3,7 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/etc:/usr/local/sbin:/usr/sb
 export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 
 # MacPorts Installer Paths if/when we use MacPorts
