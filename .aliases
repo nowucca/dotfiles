@@ -271,3 +271,6 @@ alias pmvndt='pmvn dependency:tree'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# Jekyll
+alias jekyll='bundle exec jekyll serve'
