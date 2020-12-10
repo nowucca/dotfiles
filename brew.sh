@@ -174,6 +174,9 @@ brew cask install tcl
 #Java
 brew install jenv
 
+#Github
+brew install gh
+
 # Blockchain
 #brew tap paritytech/paritytech
 
