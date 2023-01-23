@@ -185,5 +185,14 @@ brew install mysql
 brew cask install mysqlworkbench
 #brew install parity --stable
 
+#GRPC 
+brew install grpcurl
+brew install grpcui
+
+#Powershell for Mac
+brew install --cask powershell
+
+#Security
+brew install dependency-check
 # Remove outdated versions from the cellar.
 brew cleanup
