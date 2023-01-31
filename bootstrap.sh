@@ -17,8 +17,8 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
-        ensureGitRepo git://github.com/altercation/solarized.git solarized
-        ensureGitRepo git://github.com/rupa/z.git z
+        ensureGitRepo https://github.com/altercation/solarized.git solarized
+        ensureGitRepo https://github.com/rupa/z.git z
 	source ~/.bash_profile;
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
