@@ -21,8 +21,8 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed 
-# Install Bash 4.
+brew install gnu-sed --with-default-names
+# Install a modern version of Bash.
 brew install bash
 brew install bash-completion2
 
@@ -88,6 +88,7 @@ brew install ack
 brew install git
 brew install git-lfs
 brew install git-credential-manager
+brew install gs
 brew install imagemagick --with-webp
 brew install lua
 brew install lynx
