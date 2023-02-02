@@ -1,5 +1,14 @@
+#
+# Note;
+#  install brew
+#  install jenv
+#  copy https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash to ~/.git-completion.bash
+#  then run bootstrap.sh
+#
+# to kickstart this dotfiles process on a new machine
+
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+export PATH="/opt/homebrew/bin:$HOME/bin:$PATH";
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -28,9 +37,16 @@ if [ -f $(brew --prefix)/share/zsh/site-functions/git-completion.bash ]; then
 	. $(brew --prefix)/share/zsh/site-functions/git-completion.bash
 fi
 
+# https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
+
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 # Git completions even with git alias: http://stackoverflow.com/questions/342969/how-do-i-get-bash-completion-to-work-with-aliases
  __git_complete g __git_main
@@ -54,7 +70,7 @@ done;
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
 	# Ensure existing Homebrew v1 completions continue to work
-	export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
+	#export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
 	source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
