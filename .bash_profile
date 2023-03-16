@@ -13,10 +13,13 @@ export PATH="/opt/homebrew/bin:$HOME/bin:$PATH";
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
+# init z https://github.com/rupa/z
+. ~/init/z/z.sh
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,bash_prompt,exports,aliases,functions,history,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -25,8 +28,6 @@ unset file;
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# init z https://github.com/rupa/z
-. ~/init/z/z.sh
 
 
 # GTK path for wireshark GUI to work

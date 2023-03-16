@@ -184,6 +184,7 @@ alias java7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7) && PATH=$JAVA_HOM
 alias java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && PATH=$JAVA_HOME/bin:$PATH'
 alias java9='export JAVA_HOME=$(/usr/libexec/java_home -v 9) && PATH=$JAVA_HOME/bin:$PATH'
 alias java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11) && PATH=$JAVA_HOME/bin:$PATH'
+alias java17='export JAVA_HOME=$(/usr/libexec/java_home -v 17) && PATH=$JAVA_HOME/bin:$PATH'
 alias trim="sed -e 's/^[[:space:]]*//g' -e 's/[[:space:]]*\$//g'"
 
 ###################
@@ -229,7 +230,7 @@ alias k6='kill %6'
 alias k7='kill %7'
 alias k8='kill %8'
 alias k9='kill %9'
-alias h='fc -l'
+alias hi='fc -l'
 alias j='jobs -l'
 alias sus='kill -STOP $$'
 
