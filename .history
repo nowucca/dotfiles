@@ -1,7 +1,6 @@
 #
 # From https://superuser.com/questions/211966/how-do-i-keep-my-bash-history-across-sessions
 #
-HISTCONTROL='ignoreboth'
 HISTFOLDER=~/.bash_histories
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
@@ -19,9 +18,10 @@ mkdir -p $HISTFOLDER
 # create unique file name for this session. 
 # Nanoseconds seems to be unique enough, try: 
 # for ((i=0; i<=10; i++)); do date +%Y-%m-%d_%H-%M-%S_%N; done
+# No nanoseconds on redhat so leaving as seconds.
 # if HISTFILE unset, history is not saved on exit -> 
 # not really necessary if we save after each command, but its a double net safety
-export HISTFILE=$HISTFOLDER/$(date +%Y-%m-%d_%H-%M-%S_%N).$HISTFILEEXT  
+export HISTFILE=$HISTFOLDER/$(date +%Y-%m-%d_%H-%M-%S).$HISTFILEEXT  
 
 # maximum number of commands to hold inside bash history buffer
 export HISTSIZE=-1      
