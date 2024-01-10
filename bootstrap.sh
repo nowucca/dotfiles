@@ -6,7 +6,7 @@ function ensureGitRepo() {
   repo_url=$1
   repo_folder=$2
   [ -r ~/init/$repo_folder ] || (mkdir -p ~/init/$repo_folder && cd ~/init/ && git clone $repo_url)
-  (cd ~/init/$repo_folder && git pull)
+  (cd ~/init/$repo_folder && git pull -q)
 }
 
 function doIt() {
@@ -16,7 +16,7 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
+		-avhq --no-perms . ~;
         ensureGitRepo https://github.com/altercation/solarized.git solarized
         ensureGitRepo https://github.com/rupa/z.git z
 	source ~/.bash_profile;

@@ -104,20 +104,17 @@ fi
 ###################################
 # Find lcoations, not bulletproof #
 ###################################
-export WHERE=`uname -n | cut -f1 -d.`
-export WHEREFROM=`who am i | cut -f2 -d " "`
+export WHEREFROM=$(who am i | cut -f2 -w)
 
 ###################################
 # Output Welcome Messages         #
 ###################################
-echo "Logged in from `who am i | cut -f2 -d " "`"
+echo "Logged in from $WHEREFROM"
 tput smso
 echo "TERM set to $TERM"
 tput rmso
-if [ "$DISPLAY" = "" ]
+if [ "$DISPLAY" != "" ]
 then
-    echo "DISPLAY not set"
-else
     echo "DISPLAY is $DISPLAY"
 fi
 
@@ -138,6 +135,7 @@ stty erase \ intr \ kill \ susp \
 export OSTYPE=`uname -s`
 case "$OSTYPE" in
         "Linux")
+         echo "Cool, more Linux!"
         ;;
 
         "Darwin")
@@ -151,7 +149,7 @@ esac
 
 
 # To use Homebrew's directories rather than ~/.jenv add to your profile:
-export JENV_ROOT=/usr/local/opt/jenv
+# export JENV_ROOT=/usr/local/opt/jenv
 
 # To enable shims and autocompletion add to your profile:
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
