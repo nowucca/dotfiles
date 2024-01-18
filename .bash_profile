@@ -1,7 +1,6 @@
 #
 # Note;
 #  install brew
-#  install jenv
 #  copy https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash to ~/.git-completion.bash
 #  then run bootstrap.sh
 #
@@ -23,12 +22,6 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,history,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
-
-# init jenv http://www.jenv.be/
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-
 
 # GTK path for wireshark GUI to work
 GTK_PATH=/usr/local/lib/gtk-2.0
@@ -146,12 +139,4 @@ case "$OSTYPE" in
           echo "Cool! A new machine!  Using default settings."
         ;;
 esac
-
-
-# To use Homebrew's directories rather than ~/.jenv add to your profile:
-# export JENV_ROOT=/usr/local/opt/jenv
-
-# To enable shims and autocompletion add to your profile:
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
 
