@@ -195,5 +195,9 @@ brew install --cask powershell
 
 #Security
 brew install dependency-check
+
+# Google Builds
+brew install bazel
+
 # Remove outdated versions from the cellar.
 brew cleanup
