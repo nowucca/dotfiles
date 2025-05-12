@@ -4,13 +4,9 @@
 source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 # /opt/nflx
-<<<<<<< HEAD
 if is_mac; then
     export PATH=/opt/nflx:/opt/nflx/bin:$PATH
 fi
-=======
-export PATH=/opt/nflx:/opt/nflx/bin:$PATH
->>>>>>> cc3e7e8 (Rearranging llm stuff)
 
 alias todo="gvim ~/drive/todo"
 alias nf="gvim ~/drive/todo-netflix.md"
@@ -57,14 +53,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && nvm use 18 >/dev/null 2>&1  # This loads nvm using node 18
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-<<<<<<< HEAD
 if is_mac; then
 				#Delivery Engineering
 
-=======
-
-if is_mac; then
->>>>>>> cc3e7e8 (Rearranging llm stuff)
 				# kubectl
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
