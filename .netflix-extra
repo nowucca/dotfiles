@@ -4,9 +4,7 @@
 source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 # /opt/nflx
-if is_mac; then
-    export PATH=/opt/nflx:/opt/nflx/bin:$PATH
-fi
+export PATH=/opt/nflx:/opt/nflx/bin:$PATH
 
 alias todo="gvim ~/drive/todo"
 alias nf="gvim ~/drive/todo-netflix.md"
