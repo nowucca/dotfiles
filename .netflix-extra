@@ -39,7 +39,7 @@ then
 fi
 
 # Establish my git credentials for Netflix by default
-git config user.email 'satkisnon@netflix.com'
+git config user.email 'satkinson@netflix.com'
 git config user.name  'Steven Atkinson'
 
 # NVM
