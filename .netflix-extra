@@ -46,9 +46,6 @@ git config --global user.name  'Steven Atkinson'
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ ! -d "$NVM_DIR" ] && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/refs/heads/master/install.sh | bash
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && nvm use 18 >/dev/null 2>&1  # This loads nvm using node 18
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -68,6 +65,18 @@ if is_coder_workspace; then
 else
     newt --app-type python cli install llm-netflix 
 fi
+=======
+
+#Delivery Engineering
+
+# kubectl
+[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
+[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
+
+source $HOME/.spinnaker-env.sh
+
+alias llm='/Users/satkinson/.llm-netflix/env/bin/llm'
+alias bot='/Users/satkinson/.llm-netflix/env/bin/llm netflix'
 
 # Alias to configure and start the aiproxy
 # Function to configure the aiproxy
