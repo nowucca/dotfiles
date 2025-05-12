@@ -6,10 +6,30 @@
 #
 # to kickstart this dotfiles process on a new machine
 
+# Determine if we are in a virutal workspace or not
+# Function to check if we are in a coder workspace
+is_coder_workspace() {
+  # Check for a specific environment variable that is only set in your coder workspace
+  [[ -n "$CODER_WORKSPACENAME" ]]
+}
+
+# Function to check if the system is Linux
+is_linux() {
+  [[ "$(uname)" == "Linux" ]]
+}
+
+is_mac() {
+  [[ "$(uname -s)" == "Darwin" ]]
+}
+
 # Add `~/bin` to the `$PATH`
-export PATH="/opt/homebrew/bin:$HOME/bin:$PATH";
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$HOME/bin:$PATH";
+if is_mac; then
+	  export PATH="/opt/homebrew/bin:$PATH";
+    # Set PATH, MANPATH, etc., for Homebrew.
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 
 
 # init z https://github.com/rupa/z
