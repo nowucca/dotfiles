@@ -56,100 +56,20 @@ if is_mac; then
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 
+if is_mac; then
+				#Delivery Engineering
+
+				# kubectl
+				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
+				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
+
 				source $HOME/.spinnaker-env.sh
-fi
 
 if is_coder_workspace; then
     curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh  
 else
     newt --app-type python cli install llm-netflix 
 fi
-
-# Alias to configure and start the aiproxy
-# Function to configure the aiproxy
-configure_aiproxy() {
-    cat << EOF > /tmp/proxy-config.yaml
-apiVersion: "v1"
-spec:
-  meshServers:
-    - name: foo
-      config:
-        localTargets:
-          - name: lo_egress
-            httpWorkload:
-              port: 2002
-              requestTimeoutMs: 0
-        listeners:
-        - name: strip_auth
-          port: 7002
-          handlers:
-            - http:
-                security:
-                  plaintext: {}
-                headers:
-                  requestHeadersToRemove:
-                    - "Authorization"
-                defaultRoute:
-                  localTargetName: lo_egress
-EOF
-}
-
-# Alias to configure and start the aiproxy
-alias start-aiproxy='configure_aiproxy && newt --app-type mesh start -e prod -s /tmp/proxy-config.yaml'
-
-function setup_cline() {
-    # Ensure VPN and Docker are running
-    echo "Please ensure your VPN is connected and Docker is running."
-
-    # Check for Model Gateway project ID
-    if [ -z "$1" ]; then
-        echo "Model Gateway project ID is required."
-        echo "Please visit https://go.netflix.com/modelgateway to create a project ID."
-        return 1
-    fi
-
-    # Assign the provided project ID to a variable
-    MODEL_GATEWAY_PROJECT_ID="$1"
-
-    # Create the configuration file
-    echo "Creating proxy configuration file..."
-    cat << EOF > /tmp/proxy-config.yaml
-apiVersion: "v1"
-spec:
-  meshServers:
-    - name: foo
-      config:
-        localTargets:
-          - name: lo_egress
-            httpWorkload:
-              port: 2002
-              requestTimeoutMs: 0
-        listeners:
-        - name: strip_auth
-          port: 7002
-          handlers:
-            - http:
-                security:
-                  plaintext: {}
-                headers:
-                  requestHeadersToRemove:
-                    - "Authorization"
-                defaultRoute:
-                  localTargetName: lo_egress
-EOF
-
-    # Start the proxy
-    echo "Starting the proxy..."
-    newt --app-type mesh start -e prod -s /tmp/proxy-config.yaml
-
-    # Test the connection
-    echo "Testing the connection..."
-    curl -vvv http://copilotdppython-secure.us-east-1.prod.svip.mesh.netflix.net:7002/proxy/$MODEL_GATEWAY_PROJECT_ID/v1/chat/completions \
-        -H "content-type: application/json" \
-        -d '{"model": "gpt-4o", "messages": [{"content": "foo", "role": "user"}]}'
-
-    echo "\n\nSetup complete. Please configure the Cline extension in your IDE as per the instructions at https://go.netflix.com/cline"
-}
 
 alias listmodels='metatron curl -a copilotcp ''https://copilotcp.cluster.us-east-1.prod.cloud.netflix.net:8443/models/list_models?includeHidden=false'' | jq ''.models[].id'''
 
