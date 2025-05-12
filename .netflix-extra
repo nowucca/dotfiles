@@ -155,7 +155,6 @@ EOF
 
     echo "\n\nSetup complete. Please configure the Cline extension in your IDE as per the instructions at https://go.netflix.com/cline"
 }
->>>>>>> e341d7f (Support for separate .netflix-extra for netflix workspaces)
 
 alias listmodels='metatron curl -a copilotcp ''https://copilotcp.cluster.us-east-1.prod.cloud.netflix.net:8443/models/list_models?includeHidden=false'' | jq ''.models[].id'''
 
