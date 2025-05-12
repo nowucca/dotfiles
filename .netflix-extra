@@ -4,9 +4,7 @@
 source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 # /opt/nflx
-if is_mac; then
-    export PATH=/opt/nflx:/opt/nflx/bin:$PATH
-fi
+export PATH=/opt/nflx:/opt/nflx/bin:$PATH
 
 alias todo="gvim ~/drive/todo"
 alias nf="gvim ~/drive/todo-netflix.md"
@@ -55,7 +53,6 @@ if is_coder_workspace; then
 else
     newt --app-type python cli install llm-netflix >/dev/null 2>&1
 fi
-
 
 if is_mac; then
 				#Delivery Engineering
