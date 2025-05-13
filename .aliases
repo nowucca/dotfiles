@@ -281,5 +281,11 @@ alias pmvndt='pmvn dependency:tree'
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# Jekyll
-alias jekyll='bundle exec jekyll serve'
+
+##
+## Netflix aliases
+##
+alias worklist='work list --column "workspace,status,starts at,stops after"'
+alias workssh='work ssh'
+alias workcreate='work create'
+
