@@ -50,17 +50,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && nvm use 18 >/dev/null 2>&1  # This loads nvm using node 18
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if is_mac; then
-				#Delivery Engineering
-
-<<<<<<< HEAD
-				# kubectl
-				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
-				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
-
-				source $HOME/.spinnaker-env.sh
-fi
-
 if is_coder_workspace; then
     curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh  
 else
@@ -80,6 +69,7 @@ if is_mac; then
 				alias llm='/Users/satkinson/.llm-netflix/env/bin/llm'
 				alias bot='/Users/satkinson/.llm-netflix/env/bin/llm netflix'
 fi
+
 # Alias to configure and start the aiproxy
 # Function to configure the aiproxy
 configure_aiproxy() {
