@@ -64,9 +64,12 @@ if is_mac; then
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 
 				source $HOME/.spinnaker-env.sh
+fi
 
-				alias llm='/Users/satkinson/.llm-netflix/env/bin/llm'
-				alias bot='/Users/satkinson/.llm-netflix/env/bin/llm netflix'
+if is_coder_workspace; then
+    curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh  
+else
+    newt --app-type python cli install llm-netflix 
 fi
 
 # Alias to configure and start the aiproxy
