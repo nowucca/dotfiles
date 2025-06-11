@@ -63,13 +63,6 @@ if is_mac; then
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 
-if is_mac; then
-				#Delivery Engineering
-
-				# kubectl
-				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
-				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
-
 				source $HOME/.spinnaker-env.sh
 
 				alias llm='/Users/satkinson/.llm-netflix/env/bin/llm'
