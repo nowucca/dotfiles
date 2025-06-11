@@ -66,6 +66,7 @@ if is_mac; then
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 
 				source $HOME/.spinnaker-env.sh
+fi
 
 if is_coder_workspace; then
     curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh  
