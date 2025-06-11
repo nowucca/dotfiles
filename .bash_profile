@@ -130,7 +130,11 @@ fi
 ###################################
 # Find lcoations, not bulletproof #
 ###################################
+if is_coder_workspace; then
+export WHEREFROM='the ether'
+else
 export WHEREFROM=$(who am i | cut -f2 -w)
+fi
 
 ###################################
 # Output Welcome Messages         #

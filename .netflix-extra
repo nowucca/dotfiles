@@ -57,7 +57,7 @@ if is_mac; then
 fi
 
 if is_coder_workspace; then
-    curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh  
+    curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh >/dev/null 2>&1
 else
     newt --app-type python cli install llm-netflix 
 fi
