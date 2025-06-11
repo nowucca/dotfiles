@@ -50,6 +50,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && nvm use 18 >/dev/null 2>&1  # This loads nvm using node 18
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
 if is_mac; then
 				#Delivery Engineering
 
@@ -79,6 +80,7 @@ if is_mac; then
 				alias llm='/Users/satkinson/.llm-netflix/env/bin/llm'
 				alias bot='/Users/satkinson/.llm-netflix/env/bin/llm netflix'
 fi
+
 # Alias to configure and start the aiproxy
 # Function to configure the aiproxy
 configure_aiproxy() {
