@@ -4,7 +4,13 @@
 source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 # /opt/nflx
+<<<<<<< HEAD
 export PATH=/opt/nflx:/opt/nflx/bin:$PATH
+=======
+if is_mac; then
+    export PATH=/opt/nflx:/opt/nflx/bin:$PATH
+fi
+>>>>>>> 04c9ed7 (Fixing error messages for workspaces)
 
 alias todo="gvim ~/drive/todo"
 alias nf="gvim ~/drive/todo-netflix.md"
@@ -54,6 +60,7 @@ else
     newt --app-type python cli install llm-netflix >/dev/null 2>&1
 fi
 
+<<<<<<< HEAD
 if is_mac; then
 				#Delivery Engineering
 
@@ -61,6 +68,16 @@ if is_mac; then
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
 
+=======
+
+if is_mac; then
+				#Delivery Engineering
+
+				# kubectl
+				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
+				[[ ":$PATH:" != *":$HOME/.kube/bin:"* ]] && export PATH="$HOME/.kube/bin:${PATH}"
+
+>>>>>>> 04c9ed7 (Fixing error messages for workspaces)
 				source $HOME/.spinnaker-env.sh
 
 				alias llm='/Users/satkinson/.llm-netflix/env/bin/llm'
