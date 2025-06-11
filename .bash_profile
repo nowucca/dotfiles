@@ -88,11 +88,15 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null;
 done;
 
-# Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
-	# Ensure existing Homebrew v1 completions continue to work
-	#export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
-	source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
+if is_mac; then
+  # Add tab completion for many Bash commands
+  if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
+  	# Ensure existing Homebrew v1 completions continue to work
+  	#export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
+  	source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
+  elif [ -f /etc/bash_completion ]; then
+	  source /etc/bash_completion;
+  fi
 elif [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion;
 fi;
@@ -112,14 +116,16 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
-if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-    echo "Loading bash completions from $(brew --prefix)/share/bash-completion/bash_completion"
-    . $(brew --prefix)/share/bash-completion/bash_completion
-fi
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    echo "Loading bash completions from $(brew --prefix)/etc/bash_completion"
-   . $(brew --prefix)/etc/bash_completion
-fi
+if is_mac; then
+  if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+      echo "Loading bash completions from $(brew --prefix)/share/bash-completion/bash_completion"
+      . $(brew --prefix)/share/bash-completion/bash_completion
+  fi
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      echo "Loading bash completions from $(brew --prefix)/etc/bash_completion"
+     . $(brew --prefix)/etc/bash_completion
+  fi
+fi 
 
 ###################################
 # Find lcoations, not bulletproof #
