@@ -25,15 +25,20 @@ is_mac() {
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 if is_mac; then
-	  export PATH="/opt/homebrew/bin:$PATH";
     # Set PATH, MANPATH, etc., for Homebrew.
+    export PATH="/opt/homebrew/sbin:$PATH"
+	  export PATH="/opt/homebrew/bin:$PATH";
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 
 
 # init z https://github.com/rupa/z
-. ~/init/z/z.sh
+if is_coder_workspace; then
+  . ~/.config/work/dotfiles/init/z/z.sh
+else
+  . ~/init/z/z.sh
+fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -46,10 +51,12 @@ unset file;
 # GTK path for wireshark GUI to work
 GTK_PATH=/usr/local/lib/gtk-2.0
 
-# Include git completion if present
-if [ -f $(brew --prefix)/share/zsh/site-functions/git-completion.bash ]; then
-	. $(brew --prefix)/share/zsh/site-functions/git-completion.bash
-fi
+if is_mac; then
+  # Include git completion if present
+  if [ -f $(brew --prefix)/share/zsh/site-functions/git-completion.bash ]; then
+  	. $(brew --prefix)/share/zsh/site-functions/git-completion.bash
+  fi
+fi 
 
 # https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 if [ -f ~/.git-completion.bash ]; then
