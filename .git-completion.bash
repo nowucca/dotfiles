@@ -3208,9 +3208,6 @@ _git_svn ()
 				--revision --interactive $cmt_opts $fc_opts
 				"
 			;;
-		set-tree,--*)
-			__gitcomp "--stdin $cmt_opts $fc_opts"
-			;;
 		create-ignore,--*|propget,--*|proplist,--*|show-ignore,--*|\
 		show-externals,--*|mkdirs,--*)
 			__gitcomp "--revision="
