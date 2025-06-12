@@ -131,9 +131,9 @@ fi
 # Find lcoations, not bulletproof #
 ###################################
 if is_coder_workspace; then
-export WHEREFROM='the ether'
+    export WHEREFROM="somewhere inside Netflix"
 else
-export WHEREFROM=$(who am i | cut -f2 -w)
+    export WHEREFROM=$(who am i | cut -f2 -w)
 fi
 
 ###################################
