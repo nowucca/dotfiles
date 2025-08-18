@@ -206,3 +206,11 @@ function ssh_screen() {
 
 function uriencode { jq -nr --arg v "$1" '$v|@uri'; }
 
+function gradle_nuke_build() {
+  echo "Removing ~/.gradle ..."
+  rm -rf ~/.gradle
+  echo "Removing project .gradle ..."
+  rm -rf .gradle
+  echo "Starting clean build with dependency refresh ..."
+  ./gradlew clean build --refresh-dependencies
+}

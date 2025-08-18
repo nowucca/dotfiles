@@ -281,6 +281,7 @@ alias pmvndt='pmvn dependency:tree'
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+alias gw="./gradlew"
 
 ##
 ## Netflix aliases
