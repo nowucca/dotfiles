@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 # Install SDKMAN! with the following snippet:
 [[ -r ${HOME}/.sdkman ]] || curl -s "https://get.sdkman.io" | bash
 source "${HOME}/.sdkman/bin/sdkman-init.sh"
@@ -40,8 +40,8 @@ then
 fi
 
 # Establish my git credentials for Netflix by default
-git config user.email 'satkinson@netflix.com'
-git config user.name  'Steven Atkinson'
+git config --global user.email 'satkinson@netflix.com'
+git config --global user.name  'Steven Atkinson'
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -50,7 +50,7 @@ export NVM_DIR="$HOME/.nvm"
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && nvm use 18  # This loads nvm using node 18
+[ -s "$NVM_DIR/nvm.sh" ] && nvm use 18 >/dev/null 2>&1  # This loads nvm using node 18
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if is_mac; then
@@ -66,7 +66,7 @@ fi
 if is_coder_workspace; then
     curl "https://artifacts.netflix.net/package-tarballs/llm-netflix/install.sh" | sh  
 else
-    newt --app-type python cli install llm-netflix 
+    newt --app-type python cli install llm-netflix >/dev/null 2>&1
 fi
 
 

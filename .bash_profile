@@ -42,8 +42,8 @@ fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,history,extra,netflix-extra}; do
+# * ~/.extra can be used for other settings you don't want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,history,extra,netflix-extra,npm-globals}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -56,7 +56,7 @@ if is_mac; then
   if [ -f $(brew --prefix)/share/zsh/site-functions/git-completion.bash ]; then
   	. $(brew --prefix)/share/zsh/site-functions/git-completion.bash
   fi
-fi 
+fi
 
 # https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 if [ -f ~/.git-completion.bash ]; then
@@ -118,14 +118,12 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 if is_mac; then
   if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-      echo "Loading bash completions from $(brew --prefix)/share/bash-completion/bash_completion"
       . $(brew --prefix)/share/bash-completion/bash_completion
   fi
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      echo "Loading bash completions from $(brew --prefix)/etc/bash_completion"
      . $(brew --prefix)/etc/bash_completion
   fi
-fi 
+fi
 
 ###################################
 # Find lcoations, not bulletproof #
@@ -176,4 +174,3 @@ case "$OSTYPE" in
           echo "Cool! A new machine!  Using default settings."
         ;;
 esac
-
