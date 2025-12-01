@@ -58,7 +58,7 @@ function histinit() {
 
 	# Beginning with the oldest load files in $toload into bash history buffer
 	for (( i=${#toload[*]}-1; i>=0; i-- )); do
-		echo "Loading bash history from ${toload[$i]}"
+		# echo "Loading bash history from ${toload[$i]}"
 		history -r ${toload[$i]}
 	done
 }
