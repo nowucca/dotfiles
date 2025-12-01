@@ -125,26 +125,6 @@ if is_mac; then
   fi
 fi
 
-###################################
-# Find lcoations, not bulletproof #
-###################################
-if is_coder_workspace; then
-    export WHEREFROM="somewhere inside Netflix"
-else
-    export WHEREFROM=$(who am i | cut -f2 -w)
-fi
-
-###################################
-# Output Welcome Messages         #
-###################################
-echo "Logged in from $WHEREFROM"
-tput smso
-echo "TERM set to $TERM"
-tput rmso
-if [ "$DISPLAY" != "" ]
-then
-    echo "DISPLAY is $DISPLAY"
-fi
 
 ###################################
 # STTY Settings                   #
@@ -155,22 +135,3 @@ stty erase \ intr \ kill \ susp \
 # ixon (-ixon) Enable (disable) START/STOP output control
 # Output is stopped by sending STOP control character and
 # started by sending the START control character.
-
-
-#############################################################
-# System specific customization                             #
-#############################################################
-export OSTYPE=`uname -s`
-case "$OSTYPE" in
-        "Linux")
-         echo "Cool, more Linux!"
-        ;;
-
-        "Darwin")
-          echo "Cool, a Mac!"
-        ;;
-
-        *)
-          echo "Cool! A new machine!  Using default settings."
-        ;;
-esac

@@ -284,6 +284,12 @@ alias path='echo -e ${PATH//:/\\n}'
 alias gw="./gradlew"
 
 ##
+## Mermaid aliases
+##
+alias mmd2png='mmdc --input - -outputFormat png --backgroundColor transparent'
+
+
+##
 ## Netflix aliases
 ##
 alias worklist='work list --column "workspace,status,starts at,stops after"'
